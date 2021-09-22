@@ -4,13 +4,14 @@ import matplotlib.pyplot as plt
 
 
 class Generate:
-    def __init__(self , no_of_samples):
+    def __init__(self , no_of_samples,slope = 4.2069 ):
         self.n = no_of_samples
+        self.slope = slope
 
     def generate(self):
         x = np.array(range(self.n))
         noise = np.random.uniform(-20, 20, size=self.n)
-        y = 4.2069*x + noise 
+        y = self.slope*x + noise 
         return x , y
     
     def make_data(self):
